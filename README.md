@@ -15,4 +15,3 @@ Entre suas tarefas estão:
 Perguntas:
 
 1. Esse sistema é muito simples e tem potenciais problemas de segurança, você consegue identificar algum?
-2.
