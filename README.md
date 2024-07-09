@@ -21,4 +21,4 @@ Você deverá implementar funcionalidades a partir desses recursos.
 
 # Perguntas:
 
-1. Esse sistema é muito simples e tem potenciais problemas de segurança, você consegue identificar um ou mais deles??
+1. Esse sistema é muito simples e tem potenciais problemas de segurança, você consegue identificar um ou mais deles?
