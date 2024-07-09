@@ -1,10 +1,17 @@
 # Desafio Back-end
 
-Este projeto contém dois recursos essenciais para o funcionamento da aplicação, o recurso `cursos` e o recurso `student`.
+Este projeto contém dois recursos essenciais para o funcionamento da aplicação, o recurso `cursos` e o recurso `alunos`.
 
 Você deverá implementar funcionalidades a partir desses recursos.
 
-Entre suas tarefas estão:
+# Informações importantes:
+
+- O projeto está sobre o framework NestJS
+- O banco de dados é SQLite
+- Está sendo usado o ORM TypeORM para consultas/alterações no banco de dados
+- A flag `synchronize` está ativa no TypeORM para que não seja necessária a criação de migrations
+
+# Entre suas tarefas estão:
 
 1. Adicionar a possibilidade de cadastro e alteração de preço de um curso;
 2. Adicionar a possibilidade de expirar um curso, podendo estar expirado ou não;
@@ -12,6 +19,6 @@ Entre suas tarefas estão:
 4. Adicionar a possibilidade de cadastrar e descadastrar alunos à cursos;
 5. Migrar a geração de de número de matrícula do aluno para cada um de seus cursos.
 
-Perguntas:
+# Perguntas:
 
 1. Esse sistema é muito simples e tem potenciais problemas de segurança, você consegue identificar algum?
