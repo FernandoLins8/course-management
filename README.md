@@ -1,8 +1,8 @@
 # Desafio Back-end
 
-Este projeto contém um recurso essencial para o funcionamento da aplicação, o recurso `cursos`.
+Este projeto contém dois recursos essenciais para o funcionamento da aplicação, o recurso `cursos` e o recurso `student`.
 
-Você deverá implementar funcionalidades a partir desse recurso.
+Você deverá implementar funcionalidades a partir desses recursos.
 
 Entre suas tarefas estão:
 
