@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  HttpCode,
 } from '@nestjs/common';
 import { CourseService } from './course.service';
 import { CreateCourseDto } from './dto/create-course.dto';
@@ -52,5 +53,22 @@ export class CourseController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.courseService.remove(+id);
+  }
+
+  @Post(':courseId/student/:studentId')
+  addStudentToCourse(
+    @Param('courseId') courseId: number,
+    @Param('studentId') studentId: number,
+  ) {
+    return this.courseService.addStudent({
+      courseId: +courseId,
+      studentId: +studentId,
+    });
+  }
+
+  @Delete(':courseId/student/:registration')
+  @HttpCode(204)
+  removeStudentToCourse(@Param('registration') registration: string) {
+    return this.courseService.removeStudent(registration);
   }
 }

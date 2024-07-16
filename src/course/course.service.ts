@@ -1,16 +1,20 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { DeleteResult, Repository } from 'typeorm';
 import { Course } from './entities/course.entity';
 import { UpdateCourseDto } from './dto/update-course.dto';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCoursePriceDto } from './dto/update-price.dto';
+import { CourseStudent } from './entities/course-student.entity';
+import { AddStudentToCourseDto } from './dto/add-student-to-course.dto';
 
 @Injectable()
 export class CourseService {
   constructor(
     @InjectRepository(Course)
     private courseRepository: Repository<Course>,
+    @InjectRepository(CourseStudent)
+    private courseStudentRepository: Repository<CourseStudent>,
   ) {}
 
   findAll(): Promise<Course[]> {
@@ -23,6 +27,16 @@ export class CourseService {
 
   async create(createCourseDto: CreateCourseDto): Promise<Course> {
     return this.courseRepository.save(createCourseDto);
+  }
+
+  async addStudent(
+    addStudentToCourseDto: AddStudentToCourseDto,
+  ): Promise<CourseStudent> {
+    return this.courseStudentRepository.save(addStudentToCourseDto);
+  }
+
+  async removeStudent(registration: string): Promise<DeleteResult> {
+    return this.courseStudentRepository.delete(registration);
   }
 
   async updatePrice(
