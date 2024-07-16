@@ -38,6 +38,13 @@ export class CourseService {
     return this.courseRepository.findOneBy({ id });
   }
 
+  async finishCourse(id: number): Promise<Course> {
+    await this.courseRepository.update(id, {
+      hasExpired: true,
+    });
+    return this.courseRepository.findOneBy({ id });
+  }
+
   async remove(id: number): Promise<void> {
     await this.courseRepository.delete(id);
   }

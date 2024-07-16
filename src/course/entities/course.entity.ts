@@ -19,6 +19,9 @@ export class Course {
   @Column({ nullable: true })
   price: number;
 
+  @Column({ default: false })
+  hasExpired: boolean;
+
   @CreateDateColumn()
   createdAt: Date;
 }

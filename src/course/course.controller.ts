@@ -39,6 +39,11 @@ export class CourseController {
     return this.courseService.updatePrice(+id, updatePriceCourseDto);
   }
 
+  @Patch(':id/finish')
+  finishCourse(@Param('id') id: string) {
+    return this.courseService.finishCourse(+id);
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCourseDto: UpdateCourseDto) {
     return this.courseService.update(+id, updateCourseDto);
