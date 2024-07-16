@@ -16,6 +16,9 @@ export class Course {
   @Column()
   description: string;
 
+  @Column({ nullable: true })
+  price: number;
+
   @CreateDateColumn()
   createdAt: Date;
 }

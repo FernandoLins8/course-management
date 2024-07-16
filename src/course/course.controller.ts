@@ -10,6 +10,7 @@ import {
 import { CourseService } from './course.service';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
+import { UpdateCoursePriceDto } from './dto/update-price.dto';
 
 @Controller('course')
 export class CourseController {
@@ -28,6 +29,14 @@ export class CourseController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.courseService.findOne(+id);
+  }
+
+  @Patch(':id')
+  updatePrice(
+    @Param('id') id: string,
+    @Body() updatePriceCourseDto: UpdateCoursePriceDto,
+  ) {
+    return this.courseService.updatePrice(+id, updatePriceCourseDto);
   }
 
   @Patch(':id')

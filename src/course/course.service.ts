@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { Course } from './entities/course.entity';
 import { UpdateCourseDto } from './dto/update-course.dto';
 import { CreateCourseDto } from './dto/create-course.dto';
+import { UpdateCoursePriceDto } from './dto/update-price.dto';
 
 @Injectable()
 export class CourseService {
@@ -22,6 +23,14 @@ export class CourseService {
 
   async create(createCourseDto: CreateCourseDto): Promise<Course> {
     return this.courseRepository.save(createCourseDto);
+  }
+
+  async updatePrice(
+    id: number,
+    updatePriceCourseDto: UpdateCoursePriceDto,
+  ): Promise<Course> {
+    await this.courseRepository.update(id, updatePriceCourseDto);
+    return this.courseRepository.findOneBy({ id });
   }
 
   async update(id: number, updateCourseDto: UpdateCourseDto): Promise<Course> {
