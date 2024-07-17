@@ -1,8 +1,10 @@
+import { CourseStudent } from 'src/course/entities/course-student.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
+  OneToMany,
 } from 'typeorm';
 
 @Entity()
@@ -18,4 +20,7 @@ export class Student {
 
   @CreateDateColumn()
   createdAt: Date;
+
+  @OneToMany(() => CourseStudent, (courseStudent) => courseStudent)
+  courseStudent: CourseStudent[];
 }
